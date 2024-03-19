@@ -1,4 +1,4 @@
-package io.datajek.spring.basics.movierecommendersystem.lesson5;
+package io.datajek.spring.basics.movierecommendersystem.lesson7;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
