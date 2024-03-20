@@ -1,10 +1,9 @@
 package io.datajek.spring.basics.movierecommendersystem.lesson9;
 
+import io.datajek.spring.basics.movierecommendersystem.lesson9.Filters.ContentBasedFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-
-import java.util.Arrays;
 
 @SpringBootApplication
 public class MovieRecommenderSystemApplication {
