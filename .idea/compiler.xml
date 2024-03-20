@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson1/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson10/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson11/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson12/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson2/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson3/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson4/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson5/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson6/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson7/MovieRecommenderSystemApplication.java" />
+      <file url="file://$PROJECT_DIR$/movie-recommender-system/src/main/java/io/datajek/spring/basics/movierecommendersystem/lesson9/MovieRecommenderSystemApplication.java" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
