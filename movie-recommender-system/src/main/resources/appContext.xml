@@ -1,20 +1,24 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-  http://www.springframework.org/schema/beans/spring-beans.xsd">
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- enable component scan
+    <context:component-scan
+            base-package="io.datajek.spring.basics.movierecommendersystem.lesson14" /> -->
+    <!-- enable detection of dependency injection annotations -->
+    <context:annotation-config />
 
     <!-- bean definitions -->
-    <bean id="contentBasedFilter"
-          class="io.datajek.spring.basics.movierecommendersystem.lesson14.ContentBasedFilter">
-    </bean>
+    <bean id="filter"
+          class="io.datajek.spring.basics.movierecommendersystem.lesson14.ContentBasedFilter" />
 
-    <bean id="collaborativeFilter"
-          class="io.datajek.spring.basics.movierecommendersystem.lesson14.CollaborativeFilter">
-    </bean>
+    <bean id="filter1"
+          class="io.datajek.spring.basics.movierecommendersystem.lesson14.CollaborativeFilter"/>
 
-    <bean id="recommenderImplementation"
-          class="io.datajek.spring.basics.movierecommendersystem.lesson14.RecommenderImplementation">
-          <!-- <property name="filter" ref="collaborativeFilter"/> -->
-          <constructor-arg ref="collaborativeFilter"/>
-    </bean>
+    <bean id="recommenderImpl"
+          class="io.datajek.spring.basics.movierecommendersystem.lesson14.RecommenderImplementation"/>
 </beans>

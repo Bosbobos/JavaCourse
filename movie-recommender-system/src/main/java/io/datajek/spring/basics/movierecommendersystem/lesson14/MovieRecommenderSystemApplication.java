@@ -10,24 +10,21 @@ import java.util.Arrays;
 //@SpringBootApplication
 public class MovieRecommenderSystemApplication {
 	public static void main(String[] args) {
-		//ApplicationContext manages the beans and dependencies
-		//ApplicationContext appContext = SpringApplication.run(MovieRecommenderSystemApplication.class, args);
-		//AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(MovieRecommenderSystemApplication.class);
-		ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext("appContext.xml");
 
+		ClassPathXmlApplicationContext appContext =
+				new ClassPathXmlApplicationContext("appContext.xml");
 		//check the beans which have been loaded
 		System.out.println("\nBeans loaded:");
 		System.out.println(Arrays.toString(appContext.getBeanDefinitionNames()));
 
 		//retrieve bean from the application context
-		RecommenderImplementation recommender = appContext.getBean(
-				"recommenderImplementation", RecommenderImplementation.class);
+		RecommenderImplementation recommender =
+				appContext.getBean("recommenderImpl", RecommenderImplementation.class);
 
-		//call method to get recommendations
-		String[] result = recommender.recommendMovies("Finding Dory");
+		//print dependency
+		System.out.println("\nDependency: " + recommender.getFilter());
+		System.out.println();
 
-		//display results
-		System.out.println(Arrays.toString(result));
 		appContext.close();
 	}
 }

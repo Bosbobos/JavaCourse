@@ -1,5 +1,6 @@
 package io.datajek.spring.basics.movierecommendersystem.lesson14;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.inject.Inject;
@@ -7,11 +8,12 @@ import javax.inject.Named;
 
 public class RecommenderImplementation {
     private Filter filter;
+    @Autowired
+    public void setFilter(Filter filter) {
+        this.filter = filter;
+    }
     public Filter getFilter() {
         return filter;
-    }
-    public RecommenderImplementation(Filter filter) {
-        this.filter = filter;
     }
 
     /* public void setFilter(Filter filter)
