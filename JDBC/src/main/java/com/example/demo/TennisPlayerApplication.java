@@ -44,5 +44,6 @@ public class TennisPlayerApplication implements CommandLineRunner {
 		logger.info("Deleting player with id 2: {}", dao.deletePlayerById(2));
 		var newAllPlayers = dao.getAllPlayers();
 		logger.info("All players data: {}", newAllPlayers);
+		dao.createTournamentTable();
 	}
 }
