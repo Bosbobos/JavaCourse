@@ -2,14 +2,25 @@ package io.datajek.springdatajpa;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Repository
 @Transactional // Usually used on business level
 public class PlayerRepository {
     @PersistenceContext
     EntityManager entityManager;
+
+    public List<Player> getAllPlayers() {
+        TypedQuery<Player> getAll = entityManager.createNamedQuery(
+                "get_all_players",
+                Player.class
+        );
+        return getAll.getResultList();
+    }
 
     /**
      * Inserts a player into a DB
