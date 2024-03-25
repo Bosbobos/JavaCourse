@@ -1,7 +1,5 @@
 package io.datajek.springdatajpa;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,7 +9,6 @@ import java.sql.Date;
 
 @SpringBootApplication
 public class TennisPlayerSpringDataApplication implements CommandLineRunner {
-    Logger logger = LoggerFactory.getLogger(TennisPlayerSpringDataApplication.class);
     @Autowired
     PlayerSpringDataRepository repo;
 
