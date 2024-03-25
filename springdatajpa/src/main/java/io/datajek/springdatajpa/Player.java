@@ -1,12 +1,12 @@
 package io.datajek.springdatajpa;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.sql.Date;
 
 @Entity
 // @Table(name="Player")  Only needed if different name is required
-@NamedQuery(name="get_all_players", query="select p from Player p")
 public class Player {
     @Id
     @GeneratedValue
@@ -14,6 +14,7 @@ public class Player {
     private String name;
     // @Column(name="nationality") Once again, use for diff name
     private String nationality;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date birthDate;
     private int titles;
 

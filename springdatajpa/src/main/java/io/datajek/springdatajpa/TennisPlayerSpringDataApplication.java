@@ -21,19 +21,20 @@ public class TennisPlayerSpringDataApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("Inserting Player: {}", repo.save(new Player("Djokovic", "Serbia",
-                Date.valueOf("1987-05-22"), 81)));
-        logger.info("Inserting Player: {}", repo.save(new Player("Monfils", "France",
-                Date.valueOf("1986-09-01"), 10)));
-        logger.info("Inserting Player: {}", repo.save(new Player("Thiem", "Austria",
-                new Date(System.currentTimeMillis()), 17)));
-
-        Player player3 = repo.findById(3).get();
-        player3.setTitles(30);
-        logger.info("Updating Player with Id 3: {}", player3);
-        logger.info("All Players' Data: {}", repo.findAll());
-        repo.deleteById(2);
-        logger.info("All Players' Data: {}", repo.findAll());
-        logger.info("French player: {}", repo.findByNationality("France"));
+        var player1 = new Player("Sasha",
+                "Russian",
+                Date.valueOf("2005-09-17"),
+                18);
+        var player2 = new Player("Monfils",
+                "France",
+                Date.valueOf("1986-01-09"),
+                10);
+        var player3 = new Player("Smith",
+                "UK",
+                Date.valueOf("1976-10-02"),
+                20);
+        repo.save(player1);
+        repo.save(player2);
+        repo.save(player3);
     }
 }
