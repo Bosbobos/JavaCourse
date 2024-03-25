@@ -26,4 +26,8 @@ public class PlayerService {
     public Player addPlayer(Player player) {
         return repo.save(player);
     }
+
+    public Player updatePlayer(Player player) {
+        return repo.save(player);
+    }
 }

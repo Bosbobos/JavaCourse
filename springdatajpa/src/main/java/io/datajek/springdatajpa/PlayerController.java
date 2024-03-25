@@ -30,4 +30,10 @@ public class PlayerController {
         player.setId(0);
         return service.addPlayer(player);
     }
+
+    @PutMapping("/players/{id}")
+    public Player updatePlayer(@PathVariable int id, @RequestBody Player player) {
+        player.setId(id);
+        return service.updatePlayer(player);
+    }
 }
