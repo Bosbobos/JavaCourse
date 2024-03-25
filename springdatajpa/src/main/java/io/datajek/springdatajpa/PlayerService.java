@@ -22,4 +22,8 @@ public class PlayerService {
 
         return tempPlayer.get();
     }
+
+    public Player addPlayer(Player player) {
+        return repo.save(player);
+    }
 }
