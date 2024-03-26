@@ -47,6 +47,15 @@ public class PlayerService {
         repo.updateTitles(id, titles);
     }
 
+    public String deletePlayer(int id) {
+        var player = repo.findById(id);
+        if (player.isEmpty())
+            return "Player with id " + id + " not found";
+
+        repo.deleteById(id);
+        return "Deleted player with id " + id;
+    }
+
     private Player findById(int id) {
         var tempPlayer = repo.findById(id);
 
