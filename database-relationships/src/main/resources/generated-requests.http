@@ -1,0 +1,26 @@
+###
+POST http://localhost:8080/profiles
+Content-Type: application/json
+
+{
+  "twitter": "@Sasha"
+}
+
+<> 2024-03-27T013633.200.json
+<> 2024-03-27T012453.200.json
+<> 2024-03-27T012306.200.json
+###
+POST http://localhost:8080/players
+Content-Type: application/json
+
+{
+  "name": "Sasha"
+}
+
+<> 2024-03-27T013633-1.200.json
+<> 2024-03-27T012453-1.200.json
+###
+PUT localhost:8080/players/1/profiles/1
+
+<> 2024-03-27T013633-2.200.json
+<> 2024-03-27T012453-2.200.json
