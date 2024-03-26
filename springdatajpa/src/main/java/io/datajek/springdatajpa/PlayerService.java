@@ -48,11 +48,9 @@ public class PlayerService {
     }
 
     public String deletePlayer(int id) {
-        var player = repo.findById(id);
-        if (player.isEmpty())
-            return "Player with id " + id + " not found";
+        var player = findById(id);
 
-        repo.deleteById(id);
+        repo.delete(player);
         return "Deleted player with id " + id;
     }
 
@@ -60,7 +58,7 @@ public class PlayerService {
         var tempPlayer = repo.findById(id);
 
         if (tempPlayer.isEmpty())
-            throw new RuntimeException("Player with id "+ id + " not found.");
+            throw new PlayerNotFoundException(id);
 
         return tempPlayer.get();
     }
