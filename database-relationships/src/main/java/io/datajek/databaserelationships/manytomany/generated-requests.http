@@ -1,0 +1,38 @@
+###
+POST http://localhost:8080/tournaments
+Content-Type: application/json
+
+{
+  "name": "Canadian Open",
+  "location": "Toronto"
+}
+
+###
+POST http://localhost:8080/categories
+Content-Type: application/json
+
+{
+  "name" : "Men's Singles"
+}
+
+###
+PUT http://localhost:8080/tournaments/1/categories/1
+
+###
+POST http://localhost:8080/tournaments
+Content-Type: application/json
+
+{
+  "name":"Western and Southern Open",
+  "location":"Cincinatti",
+  "registrations": null,
+  "playingCategories":[{
+    "id":3
+  },
+    {
+      "id":4
+    }]
+}
+
+###
+GET http://localhost:8080/tournaments
