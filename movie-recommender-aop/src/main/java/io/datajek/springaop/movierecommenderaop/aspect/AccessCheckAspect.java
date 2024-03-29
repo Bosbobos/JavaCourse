@@ -17,8 +17,9 @@ public class AccessCheckAspect {
     //@Before("execution(String io.datajek.springaop.movierecommenderaop..*.*(..))")
     //@Before("execution(String io.datajek.springaop.movierecommenderaop..*.*Filtering(..))")
     //@Before("execution(* io.datajek.springaop.movierecommenderaop..*.*(String,..))")
-    @Before("execution(* io.datajek.springaop.movierecommenderaop..*.*Filtering(..)) || " +
-            "execution(String io.datajek.springaop.movierecommenderaop..*.*(..))")
+    //@Before("execution(* io.datajek.springaop.movierecommenderaop..*.*Filtering(..)) || " +
+    //        "execution(String io.datajek.springaop.movierecommenderaop..*.*(..))")
+    @Before("io.datajek.springaop.movierecommenderaop.aspect.JoinPointConfig.businessLayerPointcut()")
     public void userAccess(JoinPoint joinPoint) {
         logger.info("Intercepted call before execution: {}", joinPoint);
     }

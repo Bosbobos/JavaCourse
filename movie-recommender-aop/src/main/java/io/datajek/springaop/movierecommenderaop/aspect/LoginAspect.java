@@ -14,11 +14,9 @@ import org.springframework.context.annotation.Configuration;
 public class LoginAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @AfterReturning(
-            value = "execution(* io.datajek.springaop.movierecommenderaop.data.*.*(..))",
-            returning = "result")
-    public void LogAfterExecution(JoinPoint joinPoint, Object result) {
-        logger.info("Method {} returned with: {}", joinPoint, result);
+    @AfterReturning("io.datajek.springaop.movierecommenderaop.aspect.JoinPointConfig.dataLayerPointcut()")
+    public void LogAfterExecution(JoinPoint joinPoint) {
+        logger.info("Method {} executed", joinPoint);
     }
 
     @AfterThrowing(
