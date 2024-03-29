@@ -21,5 +21,10 @@
 <h2>Welcome to the tennis player database!</h2>
 <h3>Player name: <i>${name}</i> </h3>
 
+<form action="/player.do" method="post">
+    <input type="text" name="name"/>
+    <input type="submit" value="Enter"/>
+</form>
+
 </body>
 </html>
