@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 
 @WebServlet(urlPatterns = "/player.do")
 public class PlayerServlet extends HttpServlet {
+    PlayerService service = new PlayerService();
     @Override
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws IOException, ServletException {
@@ -17,10 +18,14 @@ public class PlayerServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, ServletException {
         String playerName = request.getParameter("name");
+        Player player = service.getPlayerByName(playerName);
         request.setAttribute("name", playerName);
+        request.setAttribute("country", player.getNationality());
+        request.setAttribute("dob", player.getBirthDate());
+        request.setAttribute("titles", player.getTitles());
         request.getRequestDispatcher("/WEB-INF/views/info.jsp").forward(request, response);
     }
 }
