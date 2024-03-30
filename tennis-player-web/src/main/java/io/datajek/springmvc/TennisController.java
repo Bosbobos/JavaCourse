@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class TennisController {
     @RequestMapping(method = RequestMethod.GET, value = "/")
-    @ResponseBody
     public String welcome() {
-        return "Welcome to tennis player DB from Spring MVC!";
+        return "main-menu";
     }
 }
