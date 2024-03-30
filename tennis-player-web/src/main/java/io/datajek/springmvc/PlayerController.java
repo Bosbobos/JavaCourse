@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,14 +20,13 @@ public class PlayerController {
     }
 
     @RequestMapping("/processPlayerForm")
-    public String processForm(HttpServletRequest request,
+    public String processForm(@RequestParam(defaultValue = "hehe") String playerName,
                               Model model) {
-        String pName = request.getParameter("playerName");
-        Player player = service.getPlayerByName(pName);
+        Player player = service.getPlayerByName(playerName);
         model.addAttribute("country", player.getNationality());
         model.addAttribute("dob", player.getBirthDate());
         model.addAttribute("titles", player.getTitles());
-        model.addAttribute("name", pName); // Can it be automated?????
+        model.addAttribute("name", playerName);
         return "player-detail";
     }
 }
