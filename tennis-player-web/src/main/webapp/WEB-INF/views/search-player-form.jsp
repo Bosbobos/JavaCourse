@@ -13,7 +13,7 @@
 <body>
     <h2>Player Form</h2>
     <br>
-        <form action="processPlayerForm" method="get">
+        <form action="processPlayerForm" method="post">
             Enter player name:
             <input type = "text" name = "playerName" />
             <input type = "submit" value = "Submit" />

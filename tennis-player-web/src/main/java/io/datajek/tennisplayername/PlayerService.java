@@ -1,9 +1,12 @@
 package io.datajek.tennisplayername;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Arrays;
 import java.sql.Date;
 import java.util.List;
 
+@Service
 public class PlayerService {
     private List<Player> players = Arrays.asList(
             new Player(1, "Djokovic", "Serbia", Date.valueOf("1987-05-22"), 81),
