@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Player Confirmation</title>
@@ -14,7 +15,11 @@
 <body>
     <h2>Player Confirmation</h2>
     <hr>
-    <p>Name: ${athlete.lastName}</p>
+    <p>First Name: ${athlete.firstName}</p>
+    <p>Last Name: ${athlete.lastName}</p>
+    <p>Current Rank: ${athlete.rank}</p>
+    <p>Last Won: <fmt:formatDate value="${athlete.lastWon}" type="date" pattern="dd-MM-yyyy" /> </p>
+    <p>Prize Money: ${athlete.prizeMoney}</p>
     <p>Country: ${athlete.country}</p>
     <p>Handedness: ${athlete.handedness}</p>
     <p>

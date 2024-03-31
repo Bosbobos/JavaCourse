@@ -10,12 +10,26 @@
 <html>
 <head>
     <title>Add Player</title>
+    <style>
+        .error {
+            color:red;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <h2>Player form</h2>
     <hr>
     <form:form action="processPlayerForm" modelAttribute="athlete">
-        <p>Name: <form:input path="lastName" /></p>
+        <p>First Name: <form:input path="firstName" /></p>
+        <p>Last Name *: <form:input path="lastName" />
+        <form:errors path="lastName" cssClass="error" /> </p>
+        <p>Current Rank *: <form:input path="rank" />
+        <form:errors path="rank" cssClass="error" /> </p>
+        <p>Last Won (dd-MM-yyyy): <form:input path="lastWon" />
+        <form:errors path="lastWon" cssClass="error" /> </p>
+        <p>Prize Money (USD): <form:input path="prizeMoney" placeholder="$#,###,###" />
+        <form:errors path="prizeMoney" cssClass="error" /> </p>
         <p>
             Country: <form:select path="country">
             <form:option value="AUT" label="Austria"/>
