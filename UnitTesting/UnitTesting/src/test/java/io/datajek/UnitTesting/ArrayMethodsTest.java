@@ -3,8 +3,40 @@ package io.datajek.UnitTesting;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 
 class ArrayMethodsTest {
+    @BeforeAll
+    static void beforeAllTests() {
+        System.out.println("Run this code before all tests");
+    }
+
+    @BeforeEach
+    void init(){
+        //Initialize the object here
+        System.out.println("Initializing before test");
+        var arrayMethods = new ArrayMethods();
+    }
+
+    @AfterEach
+    void afterEachTest(){
+        System.out.println("Clean up after test");
+    }
+
+    @AfterAll
+    static void afterAllTests() {
+        System.out.println("Run this code after all tests");
+    }
+
+    @Test
+    @Disabled
+    public void testSortArray() {
+        fail("unimplemented method");
+    }
 
     @Test
     void testfindIndex_numberInArray() {
